@@ -1,0 +1,20 @@
+      .solution1{
+    		margin: 300px;
+	  }
+	  label {
+	  		font-size: 16px;
+	  }
+	  body {
+	  	background-color: #DDD;
+	  }
+	  .panel-title {
+	  	line-height: 30px;
+	  	font-size: 20px;
+	  }
+	  .panel {
+	  	line-height: 50px;
+	  }
+	  .memo {
+	  	font-size: 16px;
+	  	list-style: none;
+	  }
