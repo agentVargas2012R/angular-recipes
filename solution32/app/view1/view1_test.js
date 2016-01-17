@@ -6,11 +6,22 @@ describe('myApp.view1 module', function() {
 
   describe('view1 controller', function(){
   	var scope,
-  			controller;  			
+  			controller,
+          userServ;  			
 
     beforeEach(inject(function($rootScope, $controller) {
     	scope = $rootScope.$new();
     	controller = $controller;
+
+      var complicatedServMock = {
+          authenticate: true,
+          getUsers: function(){
+            return ['igor', 'matt', 'nigel'];
+          }
+      };
+
+      userServ = complicatedServMock;
+
     }));
 
     it('should have a variable defined on it.', function(){
@@ -33,6 +44,15 @@ describe('myApp.view1 module', function() {
       expect(result.length).toBe(0);
 
     }));
+
+    //Solution 34: Mocking Objects
+    it("should mock an object so that we can unit test on what matters", function(){
+      var contract = userServ.getUsers();
+      expect(typeof contract[0] == 'string');
+      
+      //do whatever you would need to in order to test.
+    });
+
 
   });
 });
