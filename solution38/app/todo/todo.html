@@ -1,0 +1,33 @@
+<body class="container">     
+<div class="memoController" ng-controller="MemoCtrl as soln">
+<div class="row">
+   <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+     <input type="search" name="search-field" class="form-control search-field" ng-model="search" placeholder="Search..."/>
+   </div>
+</div>
+<div class="row">
+
+ <!-- 1.) NG-SUBMIT is the key to submitting forms in angular, this calls
+ a controllers method, in this case, the add method on memo ctrl--> 
+ <form name="memoForm" ng-submit="soln.add()">
+    <div class="solution1 panel panel-primary">
+      <div class="panel-heading">
+          <h1 class="panel-title">Tasks: {{soln.currentDate | date: 'medium'}}</h1>       
+      </div>
+      <div clss="panel-body">
+        <ul>
+          <li class="todo" name="todo" ng-repeat='todo in soln.todos | filter: search'>{{todo}}</li>
+        </ul>
+          <input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">
+
+      </div>
+      <div class="panel-footer" ng-controller="BillingCtrl as billing">
+
+        <!--2.) REFACTOR THE INPUT TYPE TO A BUTTON WHEN USING THE FORM -->
+        <button type="submit" class="btn btn-primary">Add</button>
+        <h3 class="text-right text-danger">Past Due: {{billing.pastDue | currency}}</h3>
+      </div>
+    </div>    
+  </form>  
+ </div> 
+</div>
