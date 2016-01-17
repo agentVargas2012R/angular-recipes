@@ -17,7 +17,7 @@ describe('my app', function() {
       browser.get('index.html#/todo');
     });
 
-    //TODO: Solution 36 Uses the Filter Input FIeld and verifies only one entry is left.
+    //TODO: Uses the Filter Input FIeld and verifies only one entry is left.
     it('should filter all the entries except for walk the dog', function() {
       element(by.name('search-field')).sendKeys('Walk').then(function(elements){
         browser.driver.findElements(By.name("todo")).then(function(result){
@@ -25,22 +25,6 @@ describe('my app', function() {
         });  
       });
     });
-
-    //TODO: Solution 37 This fills out and submits a form
-    it('should filter all the entries except for walk the dog', function() {
-      element(by.name('search-field')).sendKeys('Walk').then(function(elements){
-        browser.driver.findElements(By.name("todo")).then(function(result){
-          browser.driver.findElements(By.name("submit")).then(function(action){
-              action.click(function(outcome).then(){
-                //check the results of your entry
-                expect(true);
-              });
-
-          });
-        });  
-      });
-    });
-
   });
 
 
