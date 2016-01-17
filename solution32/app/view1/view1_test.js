@@ -6,13 +6,14 @@ describe('myApp.view1 module', function() {
 
   describe('view1 controller', function(){
   	var scope,
-  			controller,
-          userServ;  			
+          compile,
+  			     controller,
+                userServ;  			
 
-    beforeEach(inject(function($rootScope, $controller) {
+    beforeEach(inject(function($compile, $rootScope, $controller) {
     	scope = $rootScope.$new();
     	controller = $controller;
-
+      compile = $compile;
       var complicatedServMock = {
           authenticate: true,
           getUsers: function(){
@@ -49,10 +50,18 @@ describe('myApp.view1 module', function() {
     it("should mock an object so that we can unit test on what matters", function(){
       var contract = userServ.getUsers();
       expect(typeof contract[0] == 'string');
-      
+
       //do whatever you would need to in order to test.
     });
 
+    //Solution 35: Unit Test A Directive
+    it("should test a directive", function(){
+      //TRICK: is to compile the directive inline like this!!
+      var element = angular.element('<div first-directive></div>');
+      var compiledElement = compile(element)(scope);
+      scope.$digest();
+      
+    })
 
   });
 });
