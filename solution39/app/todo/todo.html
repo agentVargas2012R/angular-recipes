@@ -1,0 +1,39 @@
+<body class="container">     
+<div class="memoController" ng-controller="MemoCtrl as soln">
+<div class="row">
+   <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+     <input type="search" name="search-field" class="form-control search-field" ng-model="search" placeholder="Search..."/>
+   </div>
+</div>
+<div class="row">
+
+ <!-- 1.) Angular validation happens by using the $pristine, $valid selectors
+ that can be chained together to apply validation when appropriate. --> 
+ <form name="memoForm" ng-submit="!memoForm.$pristine && !memoForm.$valid && soln.add()" novalidate>
+    <div class="solution1 panel panel-primary">
+      <div class="panel-heading">
+          <h1 class="panel-title">Tasks: {{soln.currentDate | date: 'medium'}}</h1>       
+      </div>
+      <div clss="panel-body">
+        <ul>
+          <li class="todo" name="todo" ng-repeat='todo in soln.todos | filter: search'>{{todo}}</li>
+        </ul>
+
+        <input class="form-control" required type="text" ng-model="soln.item" placeholder="Walk the dog.">
+
+        <!-- DISPLAY MULTIPLE ERROR MESSAGES WITH NG-MESSAGES AND NG-MULTIPLE-MESSAGES -->
+        <div ng-messages="memoForm.$error" ng-hide="memoForm.$valid" ng-show="memoForm.$dirty" ng-messages-multiple>
+          <div class="alert alert-danger" ng-message-exp="required">What did you have to do?</div>          
+        </div>
+      </div>
+      <div class="panel-footer" ng-controller="BillingCtrl as billing">
+        <!--2.) REFACTOR THE INPUT TYPE TO A BUTTON WHEN USING THE FORM 
+            3.) Use memForm.$invalid to disable the submit button
+            4.) refer to the name of the form using the name attribute-->
+        <button type="submit" ng-disabled="memoForm.$invalid" class="btn btn-primary">Add</button>
+        <h3 class="text-right text-danger">Past Due: {{billing.pastDue | currency}}</h3>
+      </div>
+    </div>    
+  </form>  
+ </div> 
+</div>
