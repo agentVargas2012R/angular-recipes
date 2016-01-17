@@ -1,8 +1,9 @@
-Problem: You want to format currency
+Problem: You want to create an element directive
 
-Solution: Create a currenty filter.
+Solution: Create a directive in your application javascript file
 
-- Create a numerical object
+- Create a directive callback function off the angular object
 
-- In html, reference the object and pipe the output to a currency filter.
+- When creating the directive use the 'E' restriction option.
 
+- Implement the logic behind your directive
