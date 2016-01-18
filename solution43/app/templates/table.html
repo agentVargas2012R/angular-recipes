@@ -1,0 +1,51 @@
+<div class="" ng-controller="TableCtrl as table">
+<input class="input-sm form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="table.itemsByPage">
+
+<table st-table="table.rowCollection" class="table table-striped" style="background-color: #FFF">
+	<thead>
+		<tr>
+			<th st-sort="firstName">first name</th>
+			<th st-sort="lastName">last name</th>
+			<th st-sort="birthDate">birth date</th>
+			<th st-sort="balance">balance</th>
+			<th>email</th>
+		</tr>
+		<tr>
+			<th>
+				<input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+			</th>
+			<th colspan="4">
+				<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in table.rowCollection">
+		<td>{{row.firstName | uppercase}}</td>
+		<td>{{row.lastName}}</td>
+		<td>{{row.birthDate | date}}</td>
+		<td>{{row.balance | currency}}</td>
+		<td>
+			<button class="btn btn-sm" popover-placement="top" popover="{{row.email}}" type="button">
+				<i class="glyphicon glyphicon-eye-open"></i>
+			</button>
+			<a ng-href="mailto:{{row.email}}">email</a></td>
+		<td>
+			<button type="button" ng-click="table.removeRow(row)" class="btn btn-sm btn-danger">
+				<i class="glyphicon glyphicon-remove-circle">
+				</i>
+			</button>
+		</td>
+	</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5" class="text-center">
+				<div st-pagination="" st-items-by-page="table.itemsByPage" st-displayed-pages="7">
+										
+				</div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</div>
