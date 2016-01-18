@@ -1,41 +1,56 @@
 <div ng-controller="EditableCtrl">
   <form editable-form name="editableForm" onaftersave="saveUser()">
-    <div>
-      <!-- editable username (text with validation) -->
-      <span class="title">User name: </span>
-      <span editable-text="user.name" e-name="name" onbeforesave="checkName($data)" e-required>{{ user.name || 'empty' }}</span>
+    <div class="row">
+      <div class="col-md-6">	
+	      <!-- editable username (text with validation) -->
+	      <span class="title lead">User name: </span>
+      </div>
+      <div class="col-md-6">
+	      <span editable-text="user.name" class="lead" e-name="name" onbeforesave="checkName($data)" e-required>{{ user.name || 'empty' }}</span>
+	      </div>
     </div> 
 
-    <div>
+    <div class="row">
+     <div class="col-md-6">	
       <!-- editable status (select-local) -->
-      <span class="title">Status: </span>
-      <span editable-select="user.status" e-name="status" e-ng-options="s.value as s.text for s in statuses">
+      <span class="title lead">Status: </span>
+     </div>
+     <div class="cold-md-6"> 
+      <span editable-select="user.status" class="lead" e-name="status" e-ng-options="s.value as s.text for s in statuses" style="padding-left:15px;">
         {{ (statuses | filter:{value: user.status})[0].text || 'Not set' }}
       </span>
+     </div> 
     </div>  
 
-    <div>
+    <div class="row">
+     <div class="col-md-6">
       <!-- editable group (select-remote) -->
-      <span class="title">Group: </span>
-      <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+      <span class="title lead">Group: </span>
+     </div>
+     <div class="col-md-6"> 
+      <span editable-select="user.group" e-name="group" class="lead" onshow="loadGroups()"  e-ng-options="g.id as g.text for g in groups">
         {{ showGroup() }}
       </span>
+     </div> 
     </div>
-
-    <div class="buttons">
-      <!-- button to show form -->
-      <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-        Edit
-      </button>
-      <!-- buttons to submit / cancel form -->
-      <span ng-show="editableForm.$visible">
-        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
-          Save
-        </button>
-        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-          Cancel
-        </button>
-      </span>
-    </div>
+    <div class="row">
+      <div class="col-md-12">	
+	    <div class="buttons">
+	      <!-- button to show form -->
+	      <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+	        Edit
+	      </button>
+	      <!-- buttons to submit / cancel form -->
+	      <span ng-show="editableForm.$visible">
+	        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+	          Save
+	        </button>
+	        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+	          Cancel
+	        </button>
+	      </span>
+	    </div>
+	   </div> 
+   </div> 
   </form>  
 </div>
