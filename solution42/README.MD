@@ -1,8 +1,8 @@
-Problem: You want to use OAuth authentication.
+Problem: You want to use a powerful, flexible and performant table.
 
 Solution: 
- - complete solution40 as a prerequisite.
+ - Use angular smart table
   
 
 Resources:
-https://github.com/angular-ui/ui-router/wiki#resolve
+- http://lorenzofox3.github.io/smart-table-website/
