@@ -1,18 +1,8 @@
-Problem: You want to trouble shoot an existing issue but you are viewing a minified file.
+Problem: You want to create a custom filter
 
-Solution: Use the unminified version of the angular library, that is:
+Solution: Create a filter callback function on the angular object
 
-- angular.min.js --> minified version
+- Create a  filter callback function
 
-- angular.js --> unminified version. 
+- In html, reference the filter object in the chaining.
 
-Changed your reference from:
-
-```html
-<script src="/bower_components/angular/angular.min.js"/>
-```
-### TO
-
-```html
-<script src="/bower_components/angular/angular.js"/>
-```
