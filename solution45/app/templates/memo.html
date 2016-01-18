@@ -1,0 +1,23 @@
+  <div class="memoController" >
+     <div class="row">
+      <div class="solution1 panel panel-primary">
+      	<div class="panel-heading">
+      		  <h1 class="panel-title">Tasks: {{soln.currentDate | date: 'medium'}}</h1>       
+      	</div>
+      	<div clss="panel-body">
+          <ul>
+            <!-- APPLY THE CUSTOM FILTER ON THE LIST -->
+            <li class="todo" ng-repeat="todo in soln.todos | limitTo: 5 ">{{todo.title}}</li>
+            <!-- -->
+          </ul>
+    			<input class="form-control" type="text" ng-model="soln.item.task" placeholder="Walk the dog.">
+      	</div>
+        <div class="panel-footer" ng-controller="BillingCtrl as billing">
+          <input type="button" class="btn btn-primary" value="Add" ng-click="soln.add()"/>
+          <!-- TODO: FILTERING CURRENCIES CAN BE PIPE TO OUTPUT LIKE THIS -->
+          <h3 class="text-right text-danger">Past Due: {{billing.pastDue | currency}}</h3>
+        </div>
+      </div>    
+     </div> 
+    </div>
+ 
