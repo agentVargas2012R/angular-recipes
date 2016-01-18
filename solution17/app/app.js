@@ -8,8 +8,8 @@ controller('MemoCtrl', ['$scope', 'MemoSrv', function($scope, memoSrv){
 	this.todos = memoSrv.getMemos();
 
 	//TODO: Refactor the code to support a hash literal.
-	this.item = {};
-	this.item.task = "";
+	this.item = "";
+
 
 	this.currentDate = new Date();
 	
@@ -47,14 +47,14 @@ factory('MemoSrv', function($rootScope){
 				notify: function(){
 					$rootScope.$emit('MemoSrv-Event');	
 				},
-				//TODO: Updated to support objects
+
 				data: [
-					{task: "Walk the dog",
-					 completed: true}, 
-					{task: "Do the laundry",
-					 completed: true}, 
-					{task: "Goto the Grocery Store",
-					 completed: false}
+					"Walk the dog",
+					
+					"Do the laundry",
+					
+					"Goto the Grocery Store",
+					
 				],
 				getMemos: function(){
 					return this.data;	
@@ -63,9 +63,9 @@ factory('MemoSrv', function($rootScope){
 					this.data.push(item);
 					return this.data;
 				},
-				//TODO: Reference the object properties that are set on the object.
+
 				lastEntry: function(){
-					return this.data[this.data.length - 1].task;
+					return this.data[this.data.length - 1];
 				}
 	};
 }).

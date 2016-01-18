@@ -23,10 +23,10 @@
       	<div clss="panel-body">
           <ul>
             <!-- APPLY THE CUSTOM FILTER ON THE LIST -->
-            <li class="todo" ng-repeat="todo in soln.todos | lastEntry">{{todo.task}}</li>
+            <li class="todo" ng-repeat="todo in soln.todos | filter:search">{{todo}}</li>
             <!-- -->
           </ul>
-    			<input class="form-control" type="text" ng-model="soln.item.task" placeholder="Walk the dog.">
+    			<input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">
       	</div>
         <div class="panel-footer" ng-controller="BillingCtrl as billing">
           <input type="button" class="btn btn-primary" value="Add" ng-click="soln.add()"/>
