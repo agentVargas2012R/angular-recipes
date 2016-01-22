@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Solutions',['ngRoute']).
-controller('Solution8', [function($scope){
+controller('Solution8', ['$scope', function($scope){
 
 
 	//This defines a variable name on your controller called 'yourName'
@@ -15,4 +15,5 @@ controller('Solution8', [function($scope){
 	this.message = function(){
 		return "Hello " + this.yourName + "!";
 	}
+
 }]);

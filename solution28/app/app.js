@@ -78,7 +78,7 @@ directive("memoHistory" , function(){
 
 directive("tasks", function(){
 	return {
-		'restrict': 'E',
+		'restrict': 'A',
 		'templateUrl': '/app/templates/tasks.html'
 
 	}

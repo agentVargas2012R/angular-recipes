@@ -1,0 +1,12 @@
+[
+	{
+        "name"		: 	"myApp.view3",
+        "script"	: 	"view3/view3.js",
+        "template"	:   "view3/view3.html"
+	},
+	{
+        "name"		: 	"myApp.view4",
+        "script"	: 	"view4/view4.js",
+        "template"	:   "view4/view4.html"
+	}	
+]

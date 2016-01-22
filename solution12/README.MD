@@ -1,11 +1,10 @@
-Problem: You want to format a Date with Angular
+Problem: You want to share data between two controllers.
 
-Solution: Create a filter to format the date in a particular way
+Solution: Create a common angular service to share between controllers.
 
-- Create a controller variable
+- create two controllers
 
-- Reference it inside your index.html page
+- create methods that refer to the service
 
-- Pipe the date into a filter 
-
+- create a service which contains the data shared between both.
 

@@ -17,7 +17,7 @@
   	<div clss="panel-body">
       <ul>
         <!-- APPLY THE FILTER ON THE LIST -->
-        <li class="todo" name="todo" ng-repeat='todo in soln.todos | filter: search'>{{todo}}</li>
+        <li class="todo" ng-repeat="todo in soln.todos | filter: search">{{todo}}</li>
         <!-- -->
       </ul>
 			<input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">

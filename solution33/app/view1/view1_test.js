@@ -14,6 +14,7 @@ describe('myApp.view1 module', function() {
     	scope = $rootScope.$new();
     	controller = $controller;
       compile = $compile;
+      
       var complicatedServMock = {
           authenticate: true,
           getUsers: function(){

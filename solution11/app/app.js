@@ -12,6 +12,7 @@ controller('Solution8', [function($scope){
 	**/
 	this.memos = [];
 	this.item = "";
+	this.date = new Date();
 
 	//This defines a method name on your controller called 'yourName'
 	/**

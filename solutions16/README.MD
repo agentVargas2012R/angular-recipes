@@ -1,8 +1,10 @@
-Problem: You want to format currency
+Problem: You want to create an element directive
 
-Solution: Create a currenty filter.
+Solution: Create a directive using the keyword directive
 
-- Create a numerical object
+- Create a directive callback
 
-- In html, reference the object and pipe the output to a currency filter.
+- Override the appropriate methods applicable
+
+- USe the restrice: 'E' option
 

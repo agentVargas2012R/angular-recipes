@@ -1,0 +1,7 @@
+{
+	[{
+        "name"		: 	"myApp.view3",
+        "script"	: 	"view3/view3.js",
+        "template"	: "view3/view3.html"
+    }]
+}

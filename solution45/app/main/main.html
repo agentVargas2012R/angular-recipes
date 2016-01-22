@@ -1,0 +1,7 @@
+<div ng-controller="MainCtrl as main">
+	<p>This is the partial for view 1.</p>
+	{{main.someVariable}}
+	<ul>
+		<li ng-repeat="module in main.modules"><a href="#/{{module.displayName }}">{{module.description}}</a></li>
+	</ul>
+</div>

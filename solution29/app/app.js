@@ -102,8 +102,8 @@ directive("payment", function($compile){
 		},
 		link: function(scope, elemnt, attr, ctrl){
 			console.log(scope);
-			debugger;
+			//debugger;
 		},
-		template: '<h3 class="text-right text-danger">Past Due: {{ngModel | currency}}</h3>'
+		templateUrl: '<h3 class="text-right text-danger">Past Due: {{ngModel | currency}}</h3>'
 	}
 });

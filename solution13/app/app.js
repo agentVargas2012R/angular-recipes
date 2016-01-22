@@ -7,7 +7,7 @@ controller('MemoCtrl', ['$scope', 'MemoSrv', function($scope, memoSrv){
 	this.memoSrv = memoSrv;
 	this.memos = memoSrv.getMemos();
 
-	this.item = "";
+	this.item = "Default Value";
 	this.currentDate = new Date();
 	
 	this.add = function(){

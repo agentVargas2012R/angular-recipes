@@ -1,0 +1,9 @@
+[
+	{
+    	"name"			: 	"Dynamic",
+    	"path"			: 	"modules/dynamic.js",
+    	"displayName"	: 	"dynamic",
+    	"description"	:	"This Link Was Generated Dynamically"
+
+	}
+]
