@@ -10,7 +10,8 @@ angular.module('myApp.main', ['ngRoute', 'oc.lazyLoad'])
   var modules = JSON.parse(request.responseText);
 
   $ocLazyLoadProvider.config({
-    debug: true
+    debug: true,
+    modules: modules
   });
 
   $routeProvider.when('/main', {
