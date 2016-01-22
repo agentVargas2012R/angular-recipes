@@ -135,7 +135,7 @@ factory('AuthSrv', ['$rootScope','$http','$q', '$state', '$localStorage', functi
 			var user = $localStorage.user;
 			if(user != null){
 				$state.go('memo');
-				debugger;		
+				//debugger;		
 			}
 		},
 		logOut: function(user){			
