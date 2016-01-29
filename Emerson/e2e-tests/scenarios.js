@@ -29,7 +29,7 @@ describe('my app', function() {
       });  
     });
 
-    it('shoud support add a new contact', function() {
+    it('should support add a new contact', function() {
       element(By.css("button.add")).click().then(function(result){
           element(by.css('.name')).sendKeys('Roy G Biv');
           element(by.css('.username')).sendKeys('rbiv@colors.org');

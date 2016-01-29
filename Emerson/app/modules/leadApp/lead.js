@@ -26,6 +26,7 @@ angular.module('emersonApp.leadApp', ['ngRoute', 'smart-table', 'emersonApp.api'
     };
 
     controller.removeRow = function removeRow(row) {
+        //debugger;
         var index = controller.rowCollection.indexOf(row);
         if (index !== -1) {
             controller.rowCollection.splice(index, 1);
@@ -34,6 +35,7 @@ angular.module('emersonApp.leadApp', ['ngRoute', 'smart-table', 'emersonApp.api'
     };
 
     controller.open = function(index){
+        debugger;
         var currentIndex;    
         if(typeof index == "number"){
             currentIndex = index;    
