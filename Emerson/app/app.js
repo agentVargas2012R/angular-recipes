@@ -7,8 +7,7 @@ angular.module('emersonApp', [
   'emersonApp.api',
   'emersonApp.filters',
   'emersonApp.main',
-  'emersonApp.leadApp',
-
+  'emersonApp.leadApp'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/leadApp'});

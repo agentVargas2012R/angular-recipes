@@ -1,13 +1,10 @@
-'use strict';
+
 
 angular.module('emersonApp.main', ['ngRoute', 'oc.lazyLoad'])
 
 .config(['$routeProvider', '$ocLazyLoadProvider', function($routeProvider, $ocLazyLoadProvider) {
-
-  var request = new XMLHttpRequest();
-  request.open("GET", "/app/modules/modules.json", false);
-  request.send(null);
-  var modules = JSON.parse(request.responseText);
+  
+  var modules = getData();
 
   $ocLazyLoadProvider.config({
     debug: true,
@@ -22,15 +19,29 @@ angular.module('emersonApp.main', ['ngRoute', 'oc.lazyLoad'])
 
 .controller('MainCtrl', ['$scope', '$ocLazyLoad', '$location',function($scope, $ocLazyLoad, $location) {
    var request = new XMLHttpRequest();
-   request.open("GET", "/app/modules/modules.json", false);
-   request.send(null)
-   this.modules = JSON.parse(request.responseText);
+   this.modules = getData();
    var controller = this; 
    for (var module in this.modules){
-   	
+       //debugger;  	
    	   var test = $ocLazyLoad;		
        $ocLazyLoad.load(controller.modules[module].path).then(function(){   				    
+        //debugger;
    			console.log(test);	
        });             
    }    
 }]);
+
+function getData(){
+return [{
+    "name": "emersonApp.accountApp",
+    "path": "modules/accountApp/account.js",
+    "displayName": "accountApp",
+    "description": "Accounts"
+  }, {
+      "name": "emersonApp.contactApp",
+      "path": "modules/contactApp/contact.js",
+      "displayName": "contactApp",
+      "description": "Contacts"
+  }]
+
+}
