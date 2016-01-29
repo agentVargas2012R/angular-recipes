@@ -1,0 +1,115 @@
+<div ng-controller="AccountCtrl as table">
+   <div class="container-fluid">
+
+                  <!-- Page Heading -->
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h1 class="page-header">
+                              Accounts <small>Overview</small>
+                          </h1>
+                      </div>
+                  </div>
+                  <!-- /.row -->
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>The Potentials</h3>
+                              </div>
+                              <div class="panel-body">
+                                  <div class="">                                    
+                                    <table st-table="table.rowCollection" class="table table-striped" style="background-color: #FFF">
+                                      <thead>
+                                        <tr>
+                                          <th st-sort="id">ID</th>
+                                          <th st-sort="website">Website</th>
+                                          <th st-sort="Name">Name</th>          
+                                          <th st-sort="Phrase">Phrase</th>          
+                                          <th>Remove</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      <!-- id: 1
+                                          name: "Leanne Graham"
+                                          telephone: "123.456.7890"
+                                          username: "sincere@april.biz"
+                                          __proto__: Object
+                                          ,
+                                      --> 
+                                      <tr ng-repeat="row in table.rowCollection track by $index">
+
+                                        <td><input ng-dblclick="table.open($index)" class="custom-{{$index}} form-control" ng-model="row.id" style="background:transparent !important; border:none !important;" type="text" readonly="readonly"/></td>
+                                        <td><input ng-dblclick="table.open(row)" class="custom-{{$index}} form-control" ng-model="row.website" style="background:transparent !important; border:none !important;" readonly="readonly"/></td>
+                                        <td><input ng-dblclick="table.open(row)" class="custom-{{$index}} form-control" ng-model="row.company.name" style="background:transparent !important; border:none !important;" readonly="readonly"/></td> <td><input ng-dblclick="table.open(row)" class="custom-{{$index}} form-control" ng-model="row.company.catchPhrase" style="background:transparent !important; border:none !important;" readonly="readonly"/></td>       
+                                        <td>
+                                          <button style="display:none;" type="button" ng-click="table.updateRow($index, row)" class="update btn btn-lg btn-primary">
+                                            <i class="glyphicon glyphicon-floppy-disk">
+                                            </i>
+                                          </button>
+                                          <button type="button" ng-click="table.removeRow(row)" class="btn btn-lg btn-danger">
+                                            <i class="glyphicon glyphicon-remove-circle">
+                                            </i>
+                                          </button>
+                                        </td>
+                                      </tr>
+                                      </tbody>
+                                      <tfoot>
+                                        <tr>
+                                          <td colspan="5" class="text-center">
+                                            <div st-pagination="" st-items-by-page="table.itemsByPage" st-displayed-pages="7">
+                                                        
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tfoot>
+                                    </table>
+                                    <input class="input-sm form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="table.itemsByPage">
+                                    
+                                    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-success pull-right margin-top">
+                                            <i class="margin-right glyphicon glyphicon-heart">  Add
+                                            </i>
+                                          </button>  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- /.row -->
+                  <emerson-dummy-content></emerson-dummy-content>  
+
+              </div>
+              <!-- /.container-fluid -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form name="form.accountForm" ng-submit="!form.accountForm.$pristine && form.accountForm.$valid && table.addRow(table.account)" novalidate>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Account</h4>
+        </div>
+        <div class="modal-body">
+          <div ng-messages="form.accountForm.$error" ng-hide="form.accountForm.$valid" ng-show="form.accountForm.$dirty" ng-messages-multiple>
+            <div class="alert alert-danger" ng-message-exp="required">Please complete the form.</div>          
+          </div>            
+
+            <input class="form-control" required type="text" ng-model="table.account.website" placeholder="www.espn.com">
+
+            <input class="form-control" required type="text" ng-model="table.account.company.name" placeholder="ESPN">
+
+            <input class="form-control" required type="text" ng-model="table.account.company.catchPhrase" placeholder="Dah Dah Dah Dah">
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" ng-disabled="form.leadForm.$invalid" class="btn btn-primary">Submit</button>
+          <button type="button" id="close" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+     </form>         
+    </div>
+
+  </div>
+</div>
+
+</div>

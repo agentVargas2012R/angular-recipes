@@ -1,0 +1,16 @@
+[
+	{
+    	"name"			: 	"emersonApp.accountApp",
+    	"path"			: 	"modules/accountApp/account.js",
+    	"displayName"	: 	"accountApp",
+    	"description"	:	"Accounts"
+
+	},
+	{
+    	"name"			: 	"emersonApp.contactApp",
+    	"path"			: 	"modules/contactApp/contact.js",
+    	"displayName"	: 	"contactApp",
+    	"description"	:	"Contacts"
+
+	}
+]

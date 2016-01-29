@@ -1,0 +1,43 @@
+      .solution1{
+    		margin-bottom: 300px;
+    		margin-right: 100px;
+    		margin-left: 100px;
+	  }
+	  label {
+	  		font-size: 16px;
+	  }
+	  body {
+	  	background-color: #DDD;
+	  }
+	  .panel-title {
+	  	line-height: 30px;
+	  	font-size: 20px;
+	  }
+	  .panel {
+	  	line-height: 50px;
+	  }
+	  .memo {
+	  	font-size: 16px;
+	  	list-style: none;
+	  }
+	  .search-field {
+	  	line-height: 20px;
+	  	font-size: 16px;
+	  	margin-bottom: 12px;
+	  }
+	  .custom .glyphicon {
+	  	padding-right:5px;
+	  }
+
+	  .form-control[readonly] {
+	  	background:transparent !important; 
+	  	border:none !important;
+	  }
+
+	  .margin-top {
+	  	margin-top: 15px;
+	  }
+
+	  .margin-right {
+	  	margin-right:15px;
+	  }
