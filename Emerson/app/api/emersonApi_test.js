@@ -177,7 +177,7 @@ describe('emersonApp.api module', function() {
         id:     1,
         name:     "Leanne Graham2",
         username:   "sincere@april.biz",
-        telephone:  "123.456.7890"
+        telephone:  "123.456.7890",
         website:    "FOX.com",
         company:  {
           "name":     "SUN",

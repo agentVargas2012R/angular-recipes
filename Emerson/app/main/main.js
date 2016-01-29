@@ -5,7 +5,6 @@ angular.module('emersonApp.main', ['ngRoute', 'oc.lazyLoad'])
 .config(['$routeProvider', '$ocLazyLoadProvider', function($routeProvider, $ocLazyLoadProvider) {
   
   var modules = getData();
-
   $ocLazyLoadProvider.config({
     debug: true,
     modules: modules
@@ -18,7 +17,6 @@ angular.module('emersonApp.main', ['ngRoute', 'oc.lazyLoad'])
 }])
 
 .controller('MainCtrl', ['$scope', '$ocLazyLoad', '$location',function($scope, $ocLazyLoad, $location) {
-   var request = new XMLHttpRequest();
    this.modules = getData();
    var controller = this; 
    for (var module in this.modules){
