@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<!-- 1.) CREATE AN APP -->
 <html ng-app="Solutions">
   <head>
     <link rel="stylesheet" href="./app/css/bootstrap.css"/>
     <link rel="stylesheet" href="./app/css/main.css"/>
   </head>
-  <!-- 2.) CREATE A CONTROLLER -->
   <body class="container" ng-controller="Solution8 as soln">
    <div class="row">
     <div class="solution1 panel panel-primary">
     	<div class="panel-heading">
 
-        <!--1.) HOW TO DISPLAY PROPERTY ON A CONTROLLER -->
     		<h1 class="panel-title">Controllers: {{soln.yourName}}</h1>
     	</div>
     	<div clss="panel-body">
@@ -19,7 +16,6 @@
     		<label>Name:</label>
       	   </div>
 
-      <!--2.) HOW TO BIND PROPERTY ON A CONTROLLER -->  
 			<input class="form-control" type="text" ng-model="soln.yourName" placeholder="Enter a name here">
 
     	</div>

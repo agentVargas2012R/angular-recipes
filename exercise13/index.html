@@ -4,38 +4,27 @@
     <link rel="stylesheet" href="./app/css/bootstrap.css"/>
     <link rel="stylesheet" href="./app/css/main.css"/>
   </head>
-  <!-- 1.) Controller 1 -->
-  <body class="container">
-     <div class="row">
-      <div class="memoHistoryController" ng-controller="MemoHistoryCtrl as history">
-        
-        <div class="row">
-          <div class="text-left col-md-12">
-            <h3 class="well">Last change: {{history.lastEntry}}</h3>
-          </div>  
-        </div>  
+  <body class="container" ng-controller="Solution12 as soln">
+   <div class="row">
+    <div class="solution1 panel panel-primary">
+    	<div class="panel-heading">
+
+        <!--1.) TODO: pipe the output for the date to the filter.  -->
+    		<h1 class="panel-title">Memo: {{soln.currentDate}}</h1>
+    	</div>
+    	<div clss="panel-body">
+        <ul>
+          <li class="memo" ng-repeat="memo in soln.memos">{{memo}}</li>
+        </ul>
+        <!--2.) HOW TO BIND PROPERTY ON A CONTROLLER -->  
+  			<input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">
+
+    	</div>
+      <div class="panel-footer">
+        <input type="button" class="btn btn-primary" value="Add" ng-click="soln.add()"/>
       </div>
-      <hr/>
-    </div>  
-    <!-- 2.) Controller 2 -->
-   <div class="memoController" ng-controller="MemoCtrl as soln">
-     <div class="row">
-      <div class="solution1 panel panel-primary">
-      	<div class="panel-heading">
-      		<h1 class="panel-title">Memo: {{soln.currentDate | date: 'medium'}}</h1>
-      	</div>
-      	<div clss="panel-body">
-          <ul>
-            <li class="memo" ng-repeat="memo in soln.memos">{{memo}}</li>
-          </ul>
-    			<input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">
-      	</div>
-        <div class="panel-footer">
-          <input type="button" class="btn btn-primary" value="Add" ng-click="soln2.add()"/>
-        </div>
-      </div>    
-     </div> 
-    </div>
+    </div>    
+   </div> 
     <!--  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
