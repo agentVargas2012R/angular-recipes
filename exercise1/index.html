@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--TODO  1.] ADD AN ng-app directive to inform angular to work with this page.-->
+<html>
+  <head>
+    <link rel="stylesheet" href="./app/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./app/css/main.css"/>
+  </head>
+  <body class="container">
+   <div class="row">
+    <div class="solution1 panel panel-primary">
+    	<div class="panel-heading">
+        <!-- TODO 2.] CREATE A VARIABLE CALLED yourName and don't forget to use the angular exrepssion sytnax-->
+    		<h1 class="panel-title">Hello !</h1>
+    	</div>
+    	<div clss="panel-body">
+           <div class="container">   	
+    		<label>Name:</label>
+      	   </div>
+			<input class="form-control" type="text" ng-model="yourName" placeholder="Enter a name here">     		
+    	</div>
+    </div>
+   </div> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="./app/js/ui-bootstrap.js"></script>
+  </body>
+</html>
