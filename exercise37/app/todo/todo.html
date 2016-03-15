@@ -1,0 +1,32 @@
+<!-- 1.) Controller 1 -->
+<body class="container">     
+<!-- 2.) Controller 2 -->
+<div class="memoController" ng-controller="MemoCtrl as soln">
+<!-- A SEARCH BUTTON FOR FILTERING -->
+<div class="row">
+   <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+     <input type="search" name="search-field" class="form-control search-field" ng-model="search" placeholder="Search..."/>
+   </div>
+</div>
+<!-- SEARCH BOX ENDS -->
+ <div class="row">
+  <div class="solution1 panel panel-primary">
+  	<div class="panel-heading">
+  		  <h1 class="panel-title">Tasks: {{soln.currentDate | date: 'medium'}}</h1>       
+  	</div>
+  	<div clss="panel-body">
+      <ul>
+        <!-- APPLY THE FILTER ON THE LIST -->
+        <li class="todo" ng-repeat="todo in soln.todos | filter: search">{{todo}}</li>
+        <!-- -->
+      </ul>
+			<input class="form-control" type="text" ng-model="soln.item" placeholder="Walk the dog.">
+  	</div>
+    <div class="panel-footer" ng-controller="BillingCtrl as billing">
+      <input type="button" class="btn btn-primary" value="Add" ng-click="soln.add()"/>
+      <!-- TODO: FILTERING CURRENCIES CAN BE PIPE TO OUTPUT LIKE THIS -->
+      <h3 class="text-right text-danger">Past Due: {{billing.pastDue | currency}}</h3>
+    </div>
+  </div>    
+ </div> 
+</div>

@@ -1,0 +1,26 @@
+<div class="memoController" ng-controller="MemoCtrl as soln">
+    <div class="row">
+       <div class="col-md-offset-3 col-md-6">
+         <input type="search" class="form-control search-field" ng-model="search" placeholder="Search..."/>
+       </div>
+    </div>
+     <div class="row">
+      <div class="solution1 panel panel-primary">
+      	<div class="panel-heading">
+      		  <h1 class="panel-title">Tasks: {{soln.currentDate | date: 'medium'}}</h1>       
+      	</div>
+      	<div clss="panel-body">
+          <ul>
+            <li class="todo" ng-repeat="todo in soln.todos | filter: search">{{todo.task}}</li>
+          </ul>
+          <!-- PARAMETERS TO A DIRECTIVE -->
+    			<input class="form-control" ng-model="soln.item.task" type="text" placeholder="Walk the dog.">
+      	</div>
+        <div class="panel-footer" ng-controller="BillingCtrl as billing">
+          <!--TODO: AN ATTRIBUTE DIRECTORY THAT TRACKS THE BROWSER HISTORY -->
+          <input type="button" class="btn btn-primary" tracking value="Add" ng-click="soln.add()"/>
+          <payment ng-model="billing.pastDue"></payment>
+        </div>
+      </div>    
+     </div> 
+</div>

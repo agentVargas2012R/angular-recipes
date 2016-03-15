@@ -1,0 +1,58 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+   .solution1{
+        margin-bottom: 300px;
+        margin-right: 300px;
+        margin-left: 300px;
+    }
+    label {
+        font-size: 16px;
+    }
+    body {
+      background-color: #DDD;
+    }
+    .panel-title {
+      line-height: 30px;
+      font-size: 20px;
+    }
+    .panel {
+      line-height: 50px;
+    }
+    .memo {
+      font-size: 16px;
+      list-style: none;
+    }
+    .search-field {
+      line-height: 20px;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
