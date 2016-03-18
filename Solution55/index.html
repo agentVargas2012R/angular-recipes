@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./app/css/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+  <script src="./node_modules/angular/angular.js"></script>
+
+  <script src="./app/app.js"></script>
+</head>
+<body>
+<div ng-app="accordian">
+    <div class="accordion__container" ng-controller="MyCtrl as myCtrl">
+        <div class="accordion__tab" ng-repeat="tabular in myCtrl.tabs" >
+            <h1>{{tabular.label}}</h1>
+            <div class="accordion__tab-title" ng-click="openTab(tabular.label)">Click Here</div>
+            
+            <div class="accordion__tab-content" ng-show="isOpenTab(tabular.label)">
+                <component-view render="tabular.component"></component-view>
+             </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
